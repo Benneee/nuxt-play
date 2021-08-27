@@ -2,15 +2,15 @@
   <div>
     <Nav />
     <div class="container">
-      <Hero />
       <LargeCardDisplay
-        v-for="cardInfo in largeCardInfo"
-        :key="`large-${cardInfo.id}`"
+        v-for="cardInfo in largeCardInfo.slice(0, 1)"
+        :key="`largecard-${cardInfo.id}`"
         :cardsSection="cardInfo"
       />
+
       <SmallCardDisplay
-        v-for="cardInfo in smallCardInfo"
-        :key="`small-${cardInfo.id}`"
+        v-for="cardInfo in smallCardInfo.slice(0, 1)"
+        :key="`smallcard-${cardInfo.id}`"
         :cardsSection="cardInfo"
       />
     </div>
@@ -28,3 +28,5 @@ export default {
   }
 };
 </script>
+
+<style></style>
