@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Nav v-if="$route.name !== 'my-items'" />
+    <Nav />
     <Nuxt />
   </div>
 </template>
