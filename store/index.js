@@ -10,6 +10,7 @@ export const state = () => ({
       image: "fe7.jpg"
     }
   ],
+
   products: [
     {
       id: 1,
@@ -233,7 +234,17 @@ export const state = () => ({
 export const mutations = {
   addItem(state, id) {
     let item = state.products.find(product => product.id == id);
-    state.myRentals.push(item);
+    let itemIndex = state.myRentals.findIndex(rental => rental.id === id);
+    if (itemIndex === -1) {
+      state.myRentals.push(item);
+    }
+  },
+
+  removeItem(state, id) {
+    let itemIndex = state.myRentals.findIndex(rental => rental.id === id);
+    if (itemIndex !== -1) {
+      state.myRentals.splice(itemIndex, 1);
+    }
   }
 };
 

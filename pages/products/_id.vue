@@ -12,7 +12,7 @@
         <div class="info-box">
           <h1>{{ product.title }}</h1>
           <p class="snippet">{{ product.snippet }}</p>
-          <RentModal />
+          <RentModal :product="product" />
         </div>
       </div>
       <div class="whats-included-container">
